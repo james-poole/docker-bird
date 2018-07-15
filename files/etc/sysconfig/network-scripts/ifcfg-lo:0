@@ -1,0 +1,6 @@
+# Test
+DEVICE=lo:0
+IPADDR=127.0.0.2
+PREFIX=32
+ONBOOT=yes
+NAME=loopback:0
