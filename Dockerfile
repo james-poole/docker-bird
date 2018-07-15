@@ -1,4 +1,4 @@
-FROM docker.io/fedora:27
+FROM docker.io/fedora:28
 COPY files/ /
 RUN \
   dnf install bird iproute initscripts -y && \
