@@ -4,5 +4,5 @@ RUN \
   dnf install bird -y && \
   dnf clean all && \
   rm -rf /var/cache/dnf && \
-  chmod 0700 /init/entrypoint.sh
+  chmod 0751 /init/entrypoint.sh
 ENTRYPOINT ["/init/entrypoint.sh"]
