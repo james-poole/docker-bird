@@ -22,6 +22,7 @@ while true; do
     else
       echo "$(date): Health check passed, starting bird."
       /usr/sbin/bird -c /etc/bird.conf
+      echo "$(data): Bird started."
     fi
   else
     if [ $(pgrep -f '/usr/sbin/bird -c /etc/bird.conf') ]; then
