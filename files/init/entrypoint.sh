@@ -1,13 +1,15 @@
 #!/bin/bash
-set -eu
-
 function cleanup {
   echo "Received exit code, stopping bird if it's running."
-  [ $(pgrep -f '/usr/sbin/bird -c /etc/bird.conf') ] && birdc down
-  exit 0
+  if [ $(pgrep -f '/usr/sbin/bird -c /etc/bird.conf') ] ; then
+    birdc down
+    exit 0
+  else
+    exit 0
+  fi
 }
 
-trap cleanup EXIT
+trap cleanup EXIT HUP INT QUIT PIPE TERM
 
 echo "Running health check before starting bird:"
 
