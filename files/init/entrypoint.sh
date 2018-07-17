@@ -4,6 +4,7 @@ set -eu
 function cleanup {
   echo "Received exit code, stopping bird if it's running."
   [ $(pgrep -f '/usr/sbin/bird -c /etc/bird.conf') ] && birdc down
+  exit 0
 }
 
 trap cleanup EXIT
